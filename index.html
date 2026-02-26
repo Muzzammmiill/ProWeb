@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRNDWORK — Street & Work Footwear</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+
+
+<!-- MAIN NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a class="logo" onclick="navigate('home')">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      GRNDWORK
+    </a>
+
+    <ul class="nav-links">
+      <li>
+        <button class="nav-link" id="nav-mens" onclick="navigate('mens')">Men's</button>
+        <div class="dropdown">
+          <div class="dropdown-col">
+            <h5>Footwear Type</h5>
+            <ul>
+              <li><a onclick="navigate('mens','boots')">Boots</a></li>
+              <li><a onclick="navigate('mens','sneakers')">Sneakers</a></li>
+              <li><a onclick="navigate('mens','canvas')">Canvas</a></li>
+              <li><a onclick="navigate('mens','work')">Work Shoes</a></li>
+              <li><a onclick="navigate('mens','sale')">Sale</a></li>
+            </ul>
+          </div>
+          <div class="dropdown-col">
+            <h5>Collections</h5>
+            <ul>
+              <li><a onclick="navigate('mens')">New Arrivals</a></li>
+              <li><a onclick="navigate('mens')">Best Sellers</a></li>
+              <li><a onclick="navigate('mens')">Wide Width</a></li>
+              <li><a onclick="navigate('mens')">90s Style</a></li>
+              <li><a onclick="navigate('mens')">Under $75</a></li>
+            </ul>
+          </div>
+          <div class="dropdown-col">
+            <div class="dropdown-feature" onclick="navigate('mens','boots')">
+              <img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=300&q=70" alt="">
+              <div class="dropdown-feature-label">Empire Hi Boot</div>
+              <div class="dropdown-feature-sub">New Drop →</div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <button class="nav-link" id="nav-womens" onclick="navigate('womens')">Women's</button>
+        <div class="dropdown">
+          <div class="dropdown-col">
+            <h5>Footwear Type</h5>
+            <ul>
+              <li><a onclick="navigate('womens','boots')">Boots</a></li>
+              <li><a onclick="navigate('womens','sneakers')">Sneakers</a></li>
+              <li><a onclick="navigate('womens','canvas')">Canvas</a></li>
+              <li><a onclick="navigate('womens','work')">Work Shoes</a></li>
+              <li><a onclick="navigate('womens','sale')">Sale</a></li>
+            </ul>
+          </div>
+          <div class="dropdown-col">
+            <h5>Collections</h5>
+            <ul>
+              <li><a onclick="navigate('womens')">New Arrivals</a></li>
+              <li><a onclick="navigate('womens')">Best Sellers</a></li>
+              <li><a onclick="navigate('womens')">Wide Width</a></li>
+              <li><a onclick="navigate('womens')">Slip Resistant</a></li>
+              <li><a onclick="navigate('womens')">Under $75</a></li>
+            </ul>
+          </div>
+          <div class="dropdown-col">
+            <div class="dropdown-feature" onclick="navigate('womens','sneakers')">
+              <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=300&q=70" alt="">
+              <div class="dropdown-feature-label">Vantage Sneaker</div>
+              <div class="dropdown-feature-sub">Best Seller →</div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <button class="nav-link" id="nav-work" onclick="navigate('work')">Work</button>
+        <div class="dropdown" style="min-width:500px; grid-template-columns:1fr 1fr 1fr;">
+          <div class="dropdown-col">
+            <h5>By Gender</h5>
+            <ul>
+              <li><a onclick="navigate('work')">Men's Work</a></li>
+              <li><a onclick="navigate('work')">Women's Work</a></li>
+            </ul>
+          </div>
+          <div class="dropdown-col">
+            <h5>Features</h5>
+            <ul>
+              <li><a onclick="navigate('work')">Slip Resistant</a></li>
+              <li><a onclick="navigate('work')">Safety Toe</a></li>
+              <li><a onclick="navigate('work')">Waterproof</a></li>
+              <li><a onclick="navigate('work')">Electrical Hazard</a></li>
+            </ul>
+          </div>
+          <div class="dropdown-col">
+            <div class="dropdown-feature" onclick="navigate('work')">
+              <img src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=300&q=70" alt="">
+              <div class="dropdown-feature-label">Grapper Work Boot</div>
+              <div class="dropdown-feature-sub">Top Rated →</div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <button class="nav-link sale-link" id="nav-sale" onclick="navigate('sale')">Sale 🔥</button>
+      </li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="nav-icon-btn" title="Search" onclick="alert('Search: Connect to /api/search endpoint')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="nav-icon-btn" title="Wishlist" onclick="navigate('cart')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </button>
+      <button class="nav-icon-btn" title="Cart" onclick="navigate('cart')" style="position:relative;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- TOAST CONTAINER -->
+<div id="toast-container"></div>
+
+<!-- ═══════════════════════════
+     PAGE: HOME
+═══════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-grid-lines"></div>
+      <div class="hero-tag">
+        <span class="badge badge-teal">New Season — Spring 2025</span>
+      </div>
+      <h1 class="hero-title">
+        Built for the<br>
+        <span class="line2">Street.</span>
+        <span class="line3">Built to Last.</span>
+      </h1>
+      <p class="hero-desc">Urban footwear engineered for those who grind — from warehouse floors to city blocks. Premium builds at prices that don't quit.</p>
+      <div class="hero-btns">
+        <button class="btn btn-primary" onclick="navigate('mens')">Shop Men's →</button>
+        <button class="btn btn-outline" onclick="navigate('womens')">Shop Women's</button>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">30+</div>
+          <div class="hero-stat-label">Years Heritage</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">200+</div>
+          <div class="hero-stat-label">Styles</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">4.8★</div>
+          <div class="hero-stat-label">Avg Rating</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">1M+</div>
+          <div class="hero-stat-label">Pairs Sold</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1000&q=80" alt="Hero Shoe">
+      <div class="hero-right-overlay"></div>
+      <div class="hero-right-badge">
+        <div class="price">$89.99</div>
+        <div class="name">Empire Hi Boot</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <div class="marquee-item">Men's Boots <span class="dot">◆</span></div>
+      <div class="marquee-item">Women's Sneakers <span class="dot">◆</span></div>
+      <div class="marquee-item">Work Footwear <span class="dot">◆</span></div>
+      <div class="marquee-item">Wide Width Available <span class="dot">◆</span></div>
+      <div class="marquee-item">Slip Resistant <span class="dot">◆</span></div>
+      <div class="marquee-item">Safety Toe Options <span class="dot">◆</span></div>
+      <div class="marquee-item">Free Shipping Over $75 <span class="dot">◆</span></div>
+      <div class="marquee-item">30 Day Returns <span class="dot">◆</span></div>
+      <div class="marquee-item">New Arrivals Weekly <span class="dot">◆</span></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="marquee-item">Men's Boots <span class="dot">◆</span></div>
+      <div class="marquee-item">Women's Sneakers <span class="dot">◆</span></div>
+      <div class="marquee-item">Work Footwear <span class="dot">◆</span></div>
+      <div class="marquee-item">Wide Width Available <span class="dot">◆</span></div>
+      <div class="marquee-item">Slip Resistant <span class="dot">◆</span></div>
+      <div class="marquee-item">Safety Toe Options <span class="dot">◆</span></div>
+      <div class="marquee-item">Free Shipping Over $75 <span class="dot">◆</span></div>
+      <div class="marquee-item">30 Day Returns <span class="dot">◆</span></div>
+      <div class="marquee-item">New Arrivals Weekly <span class="dot">◆</span></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES GRID -->
+  <section class="home-cats">
+    <div class="container">
+      <div class="home-cats-header reveal">
+        <div>
+          <div class="label">Shop by Category</div>
+          <h2 class="section-title">Find Your Style</h2>
+        </div>
+        <button class="btn btn-outline" onclick="navigate('mens')">View All →</button>
+      </div>
+      <div class="cats-grid reveal">
+        <div class="cat-card" onclick="navigate('mens','boots')">
+          <img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=900&q=80" alt="Boots">
+          <div class="cat-card-info">
+            <h3 class="cat-card-title">Men's Boots</h3>
+            <div class="cat-card-meta">
+              <span class="cat-card-count">48 Styles</span>
+              <div class="cat-card-arrow">→</div>
+            </div>
+          </div>
+        </div>
+        <div class="cat-card" onclick="navigate('womens','sneakers')">
+          <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80" alt="Women's Sneakers">
+          <div class="cat-card-info">
+            <h3 class="cat-card-title">Women's</h3>
+            <div class="cat-card-meta">
+              <span class="cat-card-count">62 Styles</span>
+              <div class="cat-card-arrow">→</div>
+            </div>
+          </div>
+        </div>
+        <div class="cat-card" onclick="navigate('work')">
+          <img src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=600&q=80" alt="Work">
+          <div class="cat-card-info">
+            <h3 class="cat-card-title">Work</h3>
+            <div class="cat-card-meta">
+              <span class="cat-card-count">34 Styles</span>
+              <div class="cat-card-arrow">→</div>
+            </div>
+          </div>
+        </div>
+        <div class="cat-card" onclick="navigate('mens','canvas')">
+          <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&q=80" alt="Canvas">
+          <div class="cat-card-info">
+            <h3 class="cat-card-title">Canvas</h3>
+            <div class="cat-card-meta">
+              <span class="cat-card-count">22 Styles</span>
+              <div class="cat-card-arrow">→</div>
+            </div>
+          </div>
+        </div>
+        <div class="cat-card" onclick="navigate('sale')" style="border-color: rgba(255,59,59,0.3);">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80" alt="Sale">
+          <div class="cat-card-info" style="background: linear-gradient(to top, rgba(255,59,59,0.6) 0%, transparent 100%);">
+            <h3 class="cat-card-title">Sale</h3>
+            <div class="cat-card-meta">
+              <span class="cat-card-count" style="color:var(--red)">Up to 50% Off</span>
+              <div class="cat-card-arrow" style="border-color:rgba(255,59,59,0.3);color:var(--red)">→</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="home-featured">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <div class="label">Trending Now</div>
+          <h2 class="section-title">Best Sellers</h2>
+        </div>
+        <button class="btn btn-outline" onclick="navigate('mens')">View All →</button>
+      </div>
+      <div class="products-row reveal" id="home-products-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE BANNER -->
+  <div class="container">
+    <div class="home-feature-banner reveal">
+      <div class="feature-img-side">
+        <img src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=900&q=80" alt="Work Footwear">
+      </div>
+      <div class="feature-text-side">
+        <div class="label">Built Different</div>
+        <h2 class="section-title" style="font-size:48px;">Step In<br>Grit.</h2>
+        <p>Every pair is engineered for the long haul — whether that's a 12-hour shift on the factory floor or a weekend in the city. We don't cut corners on comfort, protection, or style.</p>
+        <div class="feature-perks">
+          <div class="perk">
+            <div class="perk-icon"><svg stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span>ASTM-rated safety toes available on all work styles</span>
+          </div>
+          <div class="perk">
+            <div class="perk-icon"><svg stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span>Slip-resistant outsoles tested to SR/AS standards</span>
+          </div>
+          <div class="perk">
+            <div class="perk-icon"><svg stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span>Waterproof full-grain leather uppers</span>
+          </div>
+          <div class="perk">
+            <div class="perk-icon"><svg stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span>Memory foam footbeds for all-day comfort</span>
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="navigate('work')">Shop Work Footwear →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <section class="home-reviews">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <div class="label">What People Say</div>
+          <h2 class="section-title">Customer Reviews</h2>
+        </div>
+        <div style="font-family:var(--font-mono);font-size:11px;color:var(--mid);">4.8/5 · 12,400+ Reviews</div>
+      </div>
+      <div class="reviews-grid reveal">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"I've been wearing GRNDWORK boots for 3 years on job sites. They hold up through everything — concrete dust, rain, long shifts. Wouldn't trade them."</p>
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=70" class="review-avatar" alt="">
+            <div>
+              <div class="review-name">Marcus D.</div>
+              <div class="review-date">Verified Buyer · Empire Hi Boot</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Finally a brand that does wide-width without sacrificing style. I've ordered 4 pairs. The canvas sneakers are my everyday go-to."</p>
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=70" class="review-avatar" alt="">
+            <div>
+              <div class="review-name">Leila R.</div>
+              <div class="review-date">Verified Buyer · Clipper Canvas</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★☆</div>
+          <p class="review-text">"Great quality for the price. Shipping was fast, fit true to size. The slip-resistant sole on the Grapper is genuinely excellent."</p>
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=70" class="review-avatar" alt="">
+            <div>
+              <div class="review-name">Tyson M.</div>
+              <div class="review-date">Verified Buyer · Grapper Work Boot</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter-section">
+    <div class="newsletter-inner">
+      <div class="label" style="margin-bottom:12px;">Get 10% Off</div>
+      <h2 class="newsletter-title">Stay in the Loop</h2>
+      <p class="newsletter-sub">New drops, exclusive deals, restocks. No spam — unsubscribe anytime.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+        <!-- POST to /api/newsletter/subscribe -->
+        <input type="email" class="newsletter-input" placeholder="your@email.com" name="email" required>
+        <button type="submit" class="newsletter-submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+</div><!-- /page-home -->
+
+
+<!-- ═══════════════════════════
+     PAGE: CATALOG (Men/Women/Work/Sale)
+═══════════════════════════ -->
+<div class="page" id="page-catalog">
+  <div class="catalog-header">
+    <div class="catalog-header-bg"></div>
+    <div class="catalog-header-inner">
+      <div class="label" id="catalog-label">Men's Footwear</div>
+      <h1 class="catalog-title" id="catalog-title">Men's</h1>
+      <div class="catalog-count" id="catalog-count">Loading products...</div>
+      <div class="catalog-tabs" id="catalog-tabs">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+  <div class="catalog-body">
+    <div class="catalog-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="filter-group">
+          <div class="filter-label">Price Range</div>
+          <div class="price-range">
+            <div class="price-inputs">
+              <input type="number" class="price-input" placeholder="$0" id="price-min" value="0">
+              <span class="price-sep">—</span>
+              <input type="number" class="price-input" placeholder="$300" id="price-max" value="300">
+            </div>
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-label">
+            Category
+            <span class="filter-clear" onclick="clearFilter('category')">Clear</span>
+          </div>
+          <div class="filter-options" id="filter-category">
+            <label class="filter-option">
+              <input type="checkbox" value="boots" onchange="applyFilters()">
+              <span class="filter-checkbox"></span>
+              <span>Boots</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="sneakers" onchange="applyFilters()">
+              <span class="filter-checkbox"></span>
+              <span>Sneakers</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="canvas" onchange="applyFilters()">
+              <span class="filter-checkbox"></span>
+              <span>Canvas</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="work" onchange="applyFilters()">
+              <span class="filter-checkbox"></span>
+              <span>Work</span>
+            </label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-label">
+            Size (US)
+            <span class="filter-clear" onclick="clearFilter('size')">Clear</span>
+          </div>
+          <div class="filter-options" id="filter-size">
+            <label class="filter-option">
+              <input type="checkbox" value="7" onchange="applyFilters()">
+              <span class="filter-checkbox"></span>
+              <span>7</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="8" onchange="applyFilters()">
+              <span class="filter-checkbox"></span>
+              <span>8</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="9" onchange="applyFilters()">
+              <span class="filter-checkbox"></span>
+              <span>9</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="10" onchange="applyFilters()">
+              <span class="filter-checkbox"></span>
+              <span>10</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="11" onchange="applyFilters()">
+              <span class="filter-checkbox"></span>
+              <span>11</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="12" onchange="applyFilters()">
+              <span class="filter-checkbox"></span>
+              <span>12</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="13" onchange="applyFilters()">
+              <span class="filter-checkbox"></span>
+              <span>13</span>
+            </label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-label">Color</div>
+          <div class="color-filters">
+            <div class="color-filter-btn" style="background:#1a1a1a;" title="Black" onclick="toggleColorFilter(this,'black')"></div>
+            <div class="color-filter-btn" style="background:#4a3728;" title="Brown" onclick="toggleColorFilter(this,'brown')"></div>
+            <div class="color-filter-btn" style="background:#8b7355;" title="Tan" onclick="toggleColorFilter(this,'tan')"></div>
+            <div class="color-filter-btn" style="background:#f5f0e8;" title="White" onclick="toggleColorFilter(this,'white')"></div>
+            <div class="color-filter-btn" style="background:#2b4f8a;" title="Navy" onclick="toggleColorFilter(this,'navy')"></div>
+            <div class="color-filter-btn" style="background:#c04a1a;" title="Rust" onclick="toggleColorFilter(this,'rust')"></div>
+            <div class="color-filter-btn" style="background:#2d5a3d;" title="Olive" onclick="toggleColorFilter(this,'olive')"></div>
+            <div class="color-filter-btn" style="background:#888;" title="Grey" onclick="toggleColorFilter(this,'grey')"></div>
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-label">Features</div>
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" value="wide" onchange="applyFilters()">
+              <span class="filter-checkbox"></span>
+              <span>Wide Width</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="slip" onchange="applyFilters()">
+              <span class="filter-checkbox"></span>
+              <span>Slip Resistant</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="safety" onchange="applyFilters()">
+              <span class="filter-checkbox"></span>
+              <span>Safety Toe</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="waterproof" onchange="applyFilters()">
+              <span class="filter-checkbox"></span>
+              <span>Waterproof</span>
+            </label>
+          </div>
+        </div>
+        <button class="btn btn-outline" style="width:100%;justify-content:center;" onclick="clearAllFilters()">Clear All Filters</button>
+      </aside>
+
+      <!-- MAIN GRID -->
+      <div class="catalog-grid-area">
+        <div class="catalog-toolbar">
+          <div class="toolbar-sort">
+            <label>Sort:</label>
+            <select class="sort-select" id="sort-select" onchange="applyFilters()">
+              <!-- GET /api/products?sort=featured -->
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="newest">Newest</option>
+              <option value="bestseller">Best Sellers</option>
+            </select>
+          </div>
+          <div class="toolbar-view">
+            <button class="view-btn active" id="view-grid" onclick="setView('grid')" title="Grid View">
+              <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+            </button>
+            <button class="view-btn" id="view-list" onclick="setView('list')" title="List View">
+              <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="4" width="18" height="4"/><rect x="3" y="10" width="18" height="4"/><rect x="3" y="16" width="18" height="4"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="catalog-products-grid" id="catalog-grid">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="pagination">
+          <button class="page-btn">‹</button>
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn">›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- /page-catalog -->
+
+
+<!-- ═══════════════════════════
+     PAGE: PRODUCT DETAIL
+═══════════════════════════ -->
+<div class="page" id="page-product">
+  <div class="product-detail">
+    <div class="product-detail-layout">
+      <!-- GALLERY -->
+      <div class="product-gallery">
+        <div class="gallery-main" id="gallery-main">
+          <img src="" alt="" id="gallery-main-img">
+          <div class="gallery-zoom-hint">Hover to zoom</div>
+        </div>
+        <div class="gallery-thumbs" id="gallery-thumbs">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- INFO -->
+      <div class="product-info">
+        <div class="breadcrumb">
+          <span onclick="navigate('home')">Home</span>
+          <span class="breadcrumb-sep">/</span>
+          <span id="detail-breadcrumb-cat" onclick="navigate(currentCatalog)">Men's</span>
+          <span class="breadcrumb-sep">/</span>
+          <span id="detail-breadcrumb-name">Empire Hi</span>
+        </div>
+
+        <div class="detail-category" id="detail-category"></div>
+        <h1 class="detail-name" id="detail-name"></h1>
+
+        <div class="detail-rating">
+          <div class="rating-stars" id="detail-stars"></div>
+          <div class="rating-count" id="detail-reviews"></div>
+        </div>
+
+        <div class="detail-price">
+          <div class="detail-price-now" id="detail-price-now"></div>
+          <div class="detail-price-was" id="detail-price-was"></div>
+          <div class="detail-price-save" id="detail-price-save"></div>
+        </div>
+
+        <!-- COLOR -->
+        <div class="option-group">
+          <div class="option-label">Color: <span class="option-selected" id="selected-color-name">Black</span></div>
+          <div class="color-options" id="color-options"></div>
+        </div>
+
+        <!-- SIZE -->
+        <div class="option-group">
+          <div class="option-label">
+            Size (US): <span class="option-selected" id="selected-size">—</span>
+            <span class="size-guide-link" onclick="alert('Size Guide: /pages/size-guide')">Size Guide</span>
+          </div>
+          <div class="size-options" id="size-options"></div>
+        </div>
+
+        <!-- QTY -->
+        <div class="option-group">
+          <div class="option-label">Quantity</div>
+          <div class="qty-selector">
+            <button class="qty-btn" onclick="changeQty(-1)">−</button>
+            <div class="qty-value" id="qty-display">1</div>
+            <button class="qty-btn" onclick="changeQty(1)">+</button>
+          </div>
+        </div>
+
+        <!-- ADD TO CART -->
+        <!-- POST to /api/cart/add { productId, size, color, qty } -->
+        <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+        <button class="wishlist-btn" onclick="addToWishlist()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Save to Wishlist
+        </button>
+
+        <!-- PERKS -->
+        <div class="detail-perks">
+          <div class="detail-perk"><span class="detail-perk-icon">✓</span> Free shipping on orders over $75</div>
+          <div class="detail-perk"><span class="detail-perk-icon">✓</span> Free returns within 30 days</div>
+          <div class="detail-perk"><span class="detail-perk-icon">✓</span> Secure checkout — SSL encrypted</div>
+        </div>
+
+        <!-- TABS -->
+        <div class="detail-tabs">
+          <div class="detail-tab-headers">
+            <button class="detail-tab-btn active" onclick="showTab('description',this)">Description</button>
+            <button class="detail-tab-btn" onclick="showTab('specs',this)">Specs</button>
+            <button class="detail-tab-btn" onclick="showTab('shipping',this)">Shipping</button>
+            <button class="detail-tab-btn" onclick="showTab('reviews-tab',this)">Reviews</button>
+          </div>
+          <div class="detail-tab-content">
+            <div class="tab-panel active" id="tab-description">
+              <p id="detail-description"></p>
+              <p>Crafted for those who don't compromise. The upper features full-grain leather construction that breaks in naturally and only gets better with wear. The padded collar and tongue provide ankle support without restricting movement.</p>
+            </div>
+            <div class="tab-panel" id="tab-specs">
+              <table class="spec-table" id="spec-table"></table>
+            </div>
+            <div class="tab-panel" id="tab-shipping">
+              <p><strong style="color:var(--white)">Standard Shipping</strong> — Free on orders $75+, otherwise $7.99. Estimated 5–7 business days.</p>
+              <p><strong style="color:var(--white)">Express Shipping</strong> — $14.99. Estimated 2–3 business days.</p>
+              <p><strong style="color:var(--white)">Returns</strong> — Free returns within 30 days of delivery. Items must be unworn and in original packaging.</p>
+            </div>
+            <div class="tab-panel" id="tab-reviews-tab">
+              <p>Customer reviews will be loaded from <code style="color:var(--teal);font-size:12px;">/api/products/{id}/reviews</code></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- /page-product -->
+
+
+<!-- ═══════════════════════════
+     PAGE: CART
+═══════════════════════════ -->
+<div class="page" id="page-cart">
+  <div class="cart-page">
+    <div class="cart-layout">
+      <div class="cart-main">
+        <h1 class="cart-page-title">Your Cart</h1>
+        <div class="cart-page-count" id="cart-page-count">0 items</div>
+        <div id="cart-items-container">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+      <div class="order-summary">
+        <h3>Order Summary</h3>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span class="summary-val" id="summary-subtotal">$0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span class="summary-val" id="summary-shipping">TBD</span>
+        </div>
+        <div class="summary-row">
+          <span>Tax (est.)</span>
+          <span class="summary-val" id="summary-tax">$0.00</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total</span>
+          <span class="summary-val" id="summary-total">$0.00</span>
+        </div>
+
+        <div class="promo-input-wrap" style="margin-top:20px;">
+          <!-- POST to /api/cart/coupon -->
+          <input type="text" class="promo-input" placeholder="Promo code" id="promo-code-input">
+          <button class="promo-apply" onclick="applyPromoCode()">Apply</button>
+        </div>
+
+        <!-- POST to /api/checkout/session -->
+        <button class="checkout-btn" onclick="handleCheckout()">Proceed to Checkout →</button>
+        <div class="secure-note">
+          <svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Secure 256-bit SSL checkout
+        </div>
+        <div style="text-align:center;margin-top:20px;">
+          <div class="payment-methods" style="justify-content:center;">
+            <div class="pay-badge">VISA</div>
+            <div class="pay-badge">MASTERCARD</div>
+            <div class="pay-badge">AMEX</div>
+            <div class="pay-badge">PAYPAL</div>
+            <div class="pay-badge">APPLE PAY</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- /page-cart -->
+
+
+<!-- FOOTER (shared) -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="logo" onclick="navigate('home')">
+        <div class="logo-mark" style="width:22px;height:22px;">
+          <svg viewBox="0 0 24 24" style="width:11px;height:11px;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        GRNDWORK
+      </a>
+      <p>Urban footwear for those who grind. Built tough, priced for real life since 1993.</p>
+      <div class="footer-socials">
+        <a class="social-btn" title="Instagram">ig</a>
+        <a class="social-btn" title="TikTok">tt</a>
+        <a class="social-btn" title="Facebook">fb</a>
+        <a class="social-btn" title="YouTube">yt</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Men's</h5>
+      <ul>
+        <li><a onclick="navigate('mens','boots')">Boots</a></li>
+        <li><a onclick="navigate('mens','sneakers')">Sneakers</a></li>
+        <li><a onclick="navigate('mens','canvas')">Canvas</a></li>
+        <li><a onclick="navigate('mens','work')">Work</a></li>
+        <li><a onclick="navigate('sale')">Sale</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Women's</h5>
+      <ul>
+        <li><a onclick="navigate('womens','boots')">Boots</a></li>
+        <li><a onclick="navigate('womens','sneakers')">Sneakers</a></li>
+        <li><a onclick="navigate('womens','canvas')">Canvas</a></li>
+        <li><a onclick="navigate('womens','work')">Work</a></li>
+        <li><a onclick="navigate('sale')">Sale</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Help</h5>
+      <ul>
+        <li><a>Sizing Guide</a></li>
+        <li><a>Shipping Info</a></li>
+        <li><a>Returns</a></li>
+        <li><a>Contact Us</a></li>
+        <li><a>FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a>Our Story</a></li>
+        <li><a>Wholesale</a></li>
+        <li><a>Careers</a></li>
+        <li><a>Accessibility</a></li>
+        <li><a>Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 GRNDWORK Footwear. All rights reserved.</p>
+    <div class="payment-methods">
+      <div class="pay-badge">VISA</div>
+      <div class="pay-badge">MC</div>
+      <div class="pay-badge">AMEX</div>
+      <div class="pay-badge">PAYPAL</div>
+      <div class="pay-badge">APPLE PAY</div>
+    </div>
+  </div>
+</footer>
+<script src="Script.js"></script>
+</body>
+</html>
